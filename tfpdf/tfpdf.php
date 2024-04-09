@@ -9,7 +9,7 @@
 * License:  LGPL                                                               *
 *******************************************************************************/
 
-class tFPDF
+class tFPDF 
 {
 const VERSION = '1.33';
 protected $unifontSubset;

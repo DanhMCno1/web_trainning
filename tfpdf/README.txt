@@ -11,5 +11,5 @@ All tFPDF requires is a .ttf TrueType font file. The file should be placed in th
 (see the example ex.php file) and reference TrueType fonts in this directory.
 
 Pass a fourth parameter as true when calling AddFont(), and use utf-8 encoded text 
-when using Write() etc.
+when using Write() etc. 
 
