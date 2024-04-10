@@ -49,3 +49,8 @@
     }
   ?>
 </table>
+<?php
+  if(isset($_GET['congthanhtoan'])) {
+    echo '<h4>Cổng thanh toán</h4>';
+  }
+?>
