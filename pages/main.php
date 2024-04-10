@@ -51,12 +51,16 @@
 
        }elseif($tam=='thaydoimatkhau'){
                include("main/thaydoimatkhau.php");
-          }elseif($tam=='vanchuyen'){
+       }elseif($tam=='vanchuyen'){
                include("main/vanchuyen.php");
-          }elseif($tam=='thongtinthanhtoan'){
+       }elseif($tam=='thongtinthanhtoan'){
                include("main/thongtinthanhtoan.php");
-          }elseif($tam=='donhangdadat'){
+       }elseif($tam=='donhangdadat'){
                include("main/donhangdadat.php");
+          }elseif($tam=='lichsudonhang'){
+               include("main/lichsudonhang.php");
+          }elseif($tam=='xemdonhang'){
+               include("main/xemdonhang.php");
        }else {
             include("main/index.php");
        }

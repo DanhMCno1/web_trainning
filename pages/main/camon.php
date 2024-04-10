@@ -1,5 +1,8 @@
 <?php
+include('admincp/config/config.php');
+
 if(isset($_GET['partnerCode'])) {
+    $id_khachhang = $_SESSION['id_khachhang'];
     $code_order = rand(0,9999);
     $partnerCode = $_GET['partnerCode'];
     $orderId = $_GET['orderId'];
@@ -8,10 +11,17 @@ if(isset($_GET['partnerCode'])) {
     $orderType = $_GET['orderType'];
     $transId = $_GET['transId'];
     $payType = $_GET['payType'];
+    $cart_payment="momo";
+    // lay id thong tin van chuyen 
+    $sql_get_vanchuyen = mysqli_query($mysqli,"SELECT * FROM tbl_shipping WHERE id_dangky = '$id_khachhang' LIMIT 1");
+    $row_get_vanchuyen = mysqli_fetch_array($sql_get_vanchuyen);
+    $id_shipping = $row_get_vanchuyen['id_shipping'];
     // insert database momo
     $insert_momo = "INSERT INTO tbl_momo (partner_code,order_id,amount,order_info,order_type,trans_id,pay_type,code_cart) VALUE('".$partnerCode."','".$orderId."','".$amount."','".$orderInfo."','".$orderType."','".$partnerCode."','".$transId."','".$payType."','".$code_order."')";
     $cart_query = mysqli_query($mysqli,$insert_momo);
     if($cart_query) {
+        $insert_cart = "INSERT INTO tbl_cart(id_khachhang, code_cart, cart_status , cart_date, cart_payment, cart_shipping) VALUE('".$id_khachhang."','".$code_order."',1,'".$now."','".$cart_payment."','".$id_shipping."')";
+        $cart_query = mysqli_query($mysqli, $insert_cart);
         //insert gio hang
         // them don hang chi tiet
         foreach($_SESSION['cart'] as $key => $value) {

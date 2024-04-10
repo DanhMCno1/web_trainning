@@ -135,6 +135,17 @@
               Paypal
             </label>
           </div>
+
+
+          <?php
+          $tongtien = 0;
+          foreach($_SESSION['cart'] as $key => $value) {
+            $thanhTien = $value['soluong']*$value['giasp'];
+            $tongTien += $thanhTien;
+           }
+          $tongTien_vnd = $tongTien;
+          $tongtien_usd = round($tongtien/22667);
+          ?>
           <div class="form-check">
           <input type="radio" class="form-check-input" name="redirect" id="exampleRadios3" value="momo" >
             <img src="images/momo-pay.png" width="32px" height="32px" >
@@ -143,10 +154,12 @@
             </label>
           </div>
           <form action="pages/main/xulythanhtoanmomo.php" method="POST" target="_blank" enctype="application/x-ww-form-urlencoded">
+          <input type="hidden" name="tongTien_vnd" value="<?php echo $tongTien_vnd?>" >
             <input type="submit" name="momo" value="Thanh toán MOMO QRcode" class="btn btn-danger">
           </form>
           <p></p>
           <form action="pages/main/xulythanhtoanmomo_atm.php" method="POST" target="_blank" enctype="application/x-ww-form-urlencoded">
+          <input type="hidden" name="tongTien_vnd" value="<?php echo $tongTien_vnd?>" >
             <input type="submit" name="momo" value="Thanh toán MOMO ATM" class="btn btn-danger">
           </form>
       </div>

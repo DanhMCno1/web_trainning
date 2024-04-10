@@ -47,6 +47,7 @@
                 ?> 
                 <li class="nav-item"><a class="nav-link" href="index.php?dangxuat=1">Đăng xuất</a></li>
                 <li class="nav-item"><a class="nav-link" href="index.php?quanly=thaydoimatkhau">Đổi mật khẩu</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php?quanly=lichsudonhang">Lịch sử đơn hàng</a></li>
 
                 <?php
                 }else {
