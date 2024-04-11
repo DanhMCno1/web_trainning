@@ -28,10 +28,10 @@
         </ul> <!-- END tabs-nav -->
         <div id="tabs-content">
             <div id="tab1" class="tab-content">
-                <?php echo $row_chitiet['tomtat']?>
+                <?php echo html_entity_decode($row_chitiet['tomtat'])?>
             </div>
             <div id="tab2" class="tab-content">
-            <?php echo $row_chitiet['noidung']?>
+            <?php echo html_entity_decode($row_chitiet['noidung'])?>
             </div>
             <div id="tab3" class="tab-content">
             <img width="80%" src="admincp/modules/quanlysp/uploads/<?php echo $row_chitiet['hinhanh']?>">
